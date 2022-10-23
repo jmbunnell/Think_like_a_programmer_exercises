@@ -14,8 +14,8 @@ def get_int(prompt):
                 pass
         
 # Get input from user        
-input = get_int("Number: ")    
-print(f"{input % 2}")
+input = get_int("Decimal Number: ")    
+#print(f"{input % 2}")
     
 # Convert decimal to binary
 binary = []
@@ -29,6 +29,8 @@ while True:
     else:
         remainder = round(input % 2)
         input = input / 2
+        if remainder > 1:
+            remainder = 1
         binary.append(remainder)
 
 # Convert integer to string
@@ -37,8 +39,15 @@ binary_final = binary.reverse()
 for i in binary:
     final.append(str(i))
 
+# Combine string into one variable and convert to integer
+last = ''
+for j in final:
+    last = last + j
 
-print(f"{binary}")
-print(f"{final}")
+final_binary_int = int(last)
 
 # Print results
+#print(f"{binary}")
+#print(f"{final}")
+print(f"Binary Number: {final_binary_int}")
+
